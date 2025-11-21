@@ -1,6 +1,6 @@
 
 # EX 21 C program to calculate the area of a triangle using pointer.
-## DATE: 
+## DATE: 11.7.25
 ## AIM:
 To write a C program to calculate the area of a triangle using pointer.
 
