@@ -19,23 +19,34 @@ using structure(using array of structure).
 Developed by: Aparna RB
 RegisterNumber:  212222220005
 */
-#include<stdio.h>
-struct employee
+#include <stdio.h>
+
+struct emp
 {
-int id,age,salary;
-char name[30];
-}emp[100];
+    int id;
+    char name[50];
+    int age;
+    int salary;
+};
+
 int main()
 {
-int i,n;
-scanf("%d",&n);
-for(i=0;i<n;i++)
-{
-scanf("%d %s %d %d",&emp[i].id,emp[i].name,&emp[i].age,&emp[i].salary);
+    int n, i;
+    scanf("%d", &n);
+
+    struct emp e[n];
+
+    for (i = 0; i < n; i++)
+        scanf("%d %s %d %d", &e[i].id, e[i].name, &e[i].age, &e[i].salary);
+
+    printf("Employee Details\n");
+
+    for (i = 0; i < n; i++)
+        printf("%d %s %d %d\n", e[i].id, e[i].name, e[i].age, e[i].salary);
+
+    return 0;
 }
-printf("Employee Details\n");
-for(i=0;i<n;i++)
-printf("%d %s %d %d\n",emp[i].id,emp[i].name,emp[i].age,emp[i].salary);}
+
 ```
 
 ## Output:
