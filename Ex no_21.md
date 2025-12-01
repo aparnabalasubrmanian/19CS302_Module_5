@@ -19,14 +19,21 @@ Developed by: Aparna RB
 RegisterNumber:  212222220005
 */
 #include <stdio.h>
-int main() {
- float base, height, area;
- float *pBase = &base, *pHeight = &height;
- scanf("%f", pBase);
- scanf("%f", pHeight);
- area = 0.5 * (*pBase) * (*pHeight);
- printf("%.2f\n", area);
+
+int main()
+{
+    float a, b, area;
+    float *x = &a, *y = &b;
+
+    scanf("%f %f", x, y);
+
+    area = 0.5 * (*x) * (*y);
+
+    printf("%.2f", area);
+
+    return 0;
 }
+
 
 ```
 
