@@ -21,33 +21,38 @@ Developed by: Aparna RB
 RegisterNumber:  212222220005
 */
 #include <stdio.h>
-struct Employee {
-int empno;
-char dept[100];
-float basic_pay;
-float gross_salary;
-float da;
-float hra;
+
+struct emp
+{
+    int empno;
+    char dept[50];
+    float bp;
 };
-int main() {
-struct Employee employees[3];
-for (int i = 0; i < 3; ++i) {
-scanf("%d", &employees[i].empno);
-scanf("%s", employees[i].dept);
-scanf("%f", &employees[i].basic_pay);
-employees[i].da = 0.1 * employees[i].basic_pay; // DA is 10% of Basic Pay
-employees[i].hra = 0.3 * employees[i].basic_pay; // HRA is 30% of Basic Pay
-employees[i].gross_salary = employees[i].basic_pay + employees[i].da +
-employees[i].hra;
+
+int main()
+{
+    struct emp e[3];
+    int i;
+
+    for (i = 0; i < 3; i++)
+        scanf("%d %s %f", &e[i].empno, e[i].dept, &e[i].bp);
+
+    printf("Details of the Employee:\n");
+
+    for (i = 0; i < 3; i++)
+    {
+        float da = e[i].bp * 0.10;
+        float hra = e[i].bp * 0.30;
+        float gross = e[i].bp + da + hra;
+
+        printf("%d %s %.0f %.0f %.0f %.2f\n",
+               e[i].empno, e[i].dept,
+               e[i].bp, da, hra, gross);
+    }
+
+    return 0;
 }
-printf("Details of the Employee:\n");
-SAVEETHA ENGINEERING COLLEGE
-for (int i = 0; i < 3; ++i) {
-printf("%d %s %.f %.f %.f %.2f\n", employees[i].empno, employees[i].dept,
-employees[i].basic_pay, employees[i].da, employees[i].hra, employees[i].gross_salary);
-}
-return 0;
-}
+
 
 ```
 
