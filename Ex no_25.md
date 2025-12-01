@@ -19,27 +19,36 @@ Developed by: Aparna RB
 RegisterNumber:  212222220005
 */
 #include <stdio.h>
-int main() {
- char str[100];
- char *p;
- int vowels = 0, consonants = 0;
- scanf(" %[^\n]", str);
- p = str;
- while (*p != '\0') {
- if ((*p >= 'A' && *p <= 'Z') || (*p >= 'a' && *p <= 'z')) {
- char ch = (*p >= 'A' && *p <= 'Z') ? *p + 32 : *p;
- if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
- vowels++;
- } else {
- consonants++;
- }
- }
- p++;
- }
- printf("Vowels: %d\n", vowels);
- printf("Consonants: %d\n", consonants);
- return 0;
+
+int main()
+{
+    char s[100];
+    int vowels = 0, consonants = 0;
+    char *p;
+
+    fgets(s, sizeof(s), stdin);
+    p = s;
+
+    while (*p)
+    {
+        if (*p >= 'A' && *p <= 'Z')
+            *p = *p + 32;
+
+        if (*p >= 'a' && *p <= 'z')
+        {
+            if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+                vowels++;
+            else
+                consonants++;
+        }
+        p++;
+    }
+
+    printf("Vowels: %d\nConsonants: %d", vowels, consonants);
+
+    return 0;
 }
+
 ```
 
 ## Output:
